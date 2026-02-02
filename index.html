@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>RUMR ☕</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Chilanka&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- header -->
+  <!-- Navigation -->
+  <header>
+    <nav class="navbar">
+      <div class="logo">RUMR ☕<span class="hez">Not ur AVG CHAYA,ഇത് ലേശം സ്‌പൈസി ആണ്</span></div>
+      <div class="menu-toggle" id="menu-toggle">&#9776;</div>
+      <ul class="nav-links" id="nav-links">
+        <li><a href="#parayatee">PARAYATTEE  </a></li>
+        <li><a href="#choose">REVIEWS</a></li>
+        <li><a href="#enaalm-paray">ENNALUM PARAY</a></li>
+        <li><a href="#reviews">REDEEM</a></li>
+      </ul>
+    </nav>
+  </header>
+
+
+    <section id="hero">
+    <div class="hero-text">
+      <h1>Starts as “low-key secret aanu”
+Ends as “ellaam arinju poyi” 😎💨
+Source: office, school, crush, neighbour, friend’s dog… ellam ellam
+Facts: 0 ❌ | Drama: നൂറിൽ നൂറ് ⚡ | Tea: 🫖 | Vibes: chaotic af 💀🔥</h1>
+      <a href="#" class="btn">DRAMA? നൂറിൽ നൂറ് ✅</a>
+    </div>
+    <div class="hero-img">
+      <img src="images/The Tea was hot!!!.jpeg".jpg" >
+      <img src="images/Yall tell me your gossips.jpeg" >
+      <img src="images/Your rich bestie💓🤷_♀️.jpeg" >
+    </div>
+  </section>
+<section id="choose">
+    <h2>Why Choose Us? REVIEWS FROM TRUSTED BADDIES</h2>
+    <h1>u have a tea? but no one to hear?
+        we have <b>good for you</b> for the last 7 years, we serve malayali community effectively and efficiently
+    </h1>
+    <div class="cards">
+      <div class="card">
+        <img src="images/Reach GenZ Norway with @karokul and Krovella….jpeg" >
+        <h3>BADDIE 1</h3>
+        <a href="#" class="btn">💸 Best side hustle ever!</a>
+      </div>
+      <div class="card">
+        <img src="images/I Built My Empire From My Laptop — Now It Runs Itself 💅🏽🫧.jpeg" >
+        <h3>BADDIE 2</h3>
+        <a href="#" class="btn">Low-key secret shared  😋 </a>
+      </div>
+      <div class="card">
+        <img src="images/manifest.jpeg">
+        <h3>BADDIE 3</h3>
+        <a href="#" class="btn"> 10/10 would leak again.</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- curious aayo -->
+   <section class="curious">
+    <h1>CURIOUS ആയോ???
+Welcome to the only place where your small talk and low-key secrets actually pay off! 🤑
+Type your gossip, parayatee, earn points, redeem them for real rewards.
+Here, ellarum arinju poyi doesn’t get you in trouble — </br>it gets you money 💸🫖
+So why just whisper when you can cash-in on your charcha bbg? 
+
+ennitum mathiyayillel public section ind...combine tea 😁</h1>
+   </section>
+
+
+   <section id="fun-zone">
+  <!-- Parayatee Box -->
+  <div id="parayatee" class="feature-box">
+    <h2>📝 PARAYATTE  🫣 </h2>
+    <textarea placeholder="Type your gossip here..." id="gossip-box"></textarea>
+    <button id="submit-gossip">Submit & Earn Points</button>
+    <p id="points-display">Points: 0</p>
+  </div>
+
+  <!-- Redeem Section -->
+  <div id="redeem" class="feature-box">
+    <h2>💰 Redeem</h2>
+    <p>Use your points to buy cool stuff!</p>
+    <button class="redeem-btn" data-cost="10">Buy Sticker - 10 pts</button>
+    <button class="redeem-btn" data-cost="20">Buy Badge - 20 pts</button>
+  </div>
+
+  <!-- Enaalm Paray Section -->
+  <div id="enaalm-paray" class="feature-box">
+    <h2>🎤 Enaalm Paray</h2>
+    <p>Public Talk Session</p>
+    <div class="chat-box" contenteditable="true" placeholder="Type your message here..."></div>
+    <button id="send-msg">Send</button>
+    <div id="public-feed"></div>
+  </div>
+
+  <!-- Reviews -->
+  <div id="reviews" class="feature-box">
+    <h2>⭐ Reviews</h2>
+    <button onclick="document.getElementById('bottom').scrollIntoView({behavior:'smooth'})">Go to Reviews</button>
+  </div>
+</section>
+
+
+  <!-- Footer Highlights -->
+  <footer>
+    <div class="footer-text">looking for a header?
+      <h3>Looking for a footer?
+ഇത് 2026 ആന്ന് BUDDY</h3>
+      <h3>അതാ വഴിക്ക് പോയ് 😎</h3>
+    </div>
+  </footer>
+
+  <!-- Script for mobile menu -->
+  <script>
+    const toggle = document.getElementById('menu-toggle');
+    const navLinks = document.getElementById('nav-links');
+    toggle.addEventListener('click', () => {
+      navLinks.classList.toggle('active');
+    });
+    let points = 0;
+
+  // Parayatee - Submit Gossip
+  document.getElementById('submit-gossip').addEventListener('click', () => {
+    const text = document.getElementById('gossip-box').value.trim();
+    if(text) {
+      points += 5; // Earn 5 points per gossip
+      document.getElementById('points-display').innerText = `Points: ${points}`;
+      document.getElementById('gossip-box').value = '';
+      alert("Gossip submitted! +5 points 😎");
+    } else {
+      alert("Type something first!");
+    }
+  });
+
+  // Redeem Items
+  document.querySelectorAll('.redeem-btn').forEach(btn => {
+    btn.addEventListener('click', () => {
+      const cost = parseInt(btn.dataset.cost);
+      if(points >= cost) {
+        points -= cost;
+        document.getElementById('points-display').innerText = `Points: ${points}`;
+        alert(`You redeemed ${btn.innerText}! 🎉`);
+      } else {
+        alert("Not enough points! 😢");
+      }
+    });
+  });
+
+  // Enaalm Paray - Public Talk
+  document.getElementById('send-msg').addEventListener('click', () => {
+    const chatBox = document.querySelector('.chat-box');
+    const feed = document.getElementById('public-feed');
+    const msg = chatBox.innerText.trim();
+    if(msg) {
+      const p = document.createElement('p');
+      p.innerText = msg;
+      feed.appendChild(p);
+      chatBox.innerText = '';
+    }
+  });
+  </script>
+</body>
+</html>
